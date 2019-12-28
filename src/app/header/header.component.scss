@@ -1,0 +1,11 @@
+.header-bg {
+    background-color: #2C2C3D;
+}
+
+.header__button {
+    color: white;
+
+    &:hover {
+        background-color: rgba( gray, 0.4);
+    }
+}

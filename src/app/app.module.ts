@@ -6,6 +6,8 @@ import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     ListComponent,
     WeatherComponent,
     ProfileComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppHotelsComponent]
