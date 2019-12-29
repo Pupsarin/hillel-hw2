@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IProfile } from '../shared/interfaces/IProfile';
 
 @Component({
   selector: 'app-profile',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   constructor() { }
+
+  @Input()
+  public profile: IProfile;
 
   ngOnInit() {
   }

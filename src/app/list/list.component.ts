@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IHotel } from '../shared/interfaces/IHotel';
 
 @Component({
   selector: 'app-list',
@@ -9,7 +10,16 @@ export class ListComponent implements OnInit {
 
   constructor() { }
 
+  @Input()
+  public hotels: IHotel[];
+
+  @Output()
+  public listEvent = new EventEmitter();
+
   ngOnInit() {
   }
 
+  public pushEventUp($event) {
+    this.listEvent.emit($event);
+  }
 }

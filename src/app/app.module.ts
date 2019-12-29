@@ -8,6 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from './shared/shared.module';
+import { HotelItemComponent } from './list/hotel-item/hotel-item.component';
+import { FormatPhonePipe } from './list/pipes/format-phone.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { SharedModule } from './shared/shared.module';
     WeatherComponent,
     ProfileComponent,
     HeaderComponent,
+    HotelItemComponent,
+    FormatPhonePipe,
   ],
   imports: [
     BrowserModule,
