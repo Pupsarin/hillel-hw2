@@ -1,12 +1,12 @@
 <app-header></app-header>
 <h1>Hot Weather Widget</h1>
 <div class="element">
-    <div class="element-left">
-        <app-list [hotels]="hotels" (listEvent)="selectActiveHotel($event)"></app-list>
-    </div>
-    <div class="element-right">
-        <app-weather [weather]="activeHotel.weather"></app-weather>
-        <app-profile [profile]="activeHotel.profile"></app-profile>
-    </div>
-    <div class="clear"> </div>
+	<div class="element-left">
+		<app-hotel-list [hotels]="hotels" (listEvent)="selectActiveHotel($event)"></app-hotel-list>
+	</div>
+	<div class="element-right">
+		<app-weather [weather]="activeHotel.weather"></app-weather>
+		<app-profile [profile]="activeHotel.profile"></app-profile>
+	</div>
+	<div class="clear"></div>
 </div>
