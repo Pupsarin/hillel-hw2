@@ -9,14 +9,18 @@ import { IHotel } from '../shared/interfaces/IHotel';
 export class HotelListItemComponent implements OnInit {
 	constructor() {}
 
-	@Input()
-	public hotel: IHotel;
+	@Input() public hotel: IHotel;
+	@Input() public mainList: boolean;
 
-	@Output()
-	selectedHotel = new EventEmitter<number>();
+	@Output() selectedHotel = new EventEmitter<number>();
+	@Output() favHotel = new EventEmitter<IHotel>();
 
 	public selectHotel(val: number) {
 		this.selectedHotel.emit(val);
+	}
+
+	public handleFavs(hotel: IHotel) {
+		this.favHotel.emit(hotel);
 	}
 
 	ngOnInit() {}

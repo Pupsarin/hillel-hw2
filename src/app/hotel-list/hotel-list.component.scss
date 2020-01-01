@@ -1,9 +1,7 @@
 .element-bg-img img {
 	border-radius: 6px 6px 0px 0px;
 }
-.ele-strip ul li a {
-	font-size: 0.9em;
-}
+
 .ele-strip ul li {
 	padding: 0em 0.4em;
 }
@@ -18,13 +16,19 @@
 	padding: 0em 0.5em;
 	border-right: 1px solid #fff;
 }
-.ele-strip ul li a {
+.ele-strip ul li {
+	cursor: pointer;
 	font-size: 1em;
 	color: #fff;
 }
 .ele-strip {
-	background: #fda660;
-	padding: 1em 1em;
+	background: #d2e6ef;
+	padding: 0 1em 1em;
+	margin: -3px 0px 0px 0px;
+}
+.ele-top-strip {
+	background: #d2e6ef;
+	padding: 0.5em 1em 0;
 	margin: -3px 0px 0px 0px;
 }
 ul li.anc-bor {
@@ -58,4 +62,39 @@ span.line {
 	background: #fff;
 	overflow-y: scroll;
 	padding: 1em 1em 0em 1em;
+}
+.form-field {
+	width: 100%;
+	& input {
+		color: #000;
+	}
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+	color: rgba($color: #000, $alpha: 0.59);
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+	background-color: rgba($color: #000, $alpha: 0.59);
+}
+mat-button-toggle-group.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+	border: none;
+	width: 100%;
+	display: flex;
+	flex-basis: 25%;
+}
+mat-button-toggle {
+	width: 25%;
+}
+
+.mat-button-toggle-appearance-standard {
+	background-color: transparent;
+	color: #000;
+}
+
+.mat-button-toggle-checked.mat-button-toggle-appearance-standard {
+	color: #673ab7;
+}
+
+.mat-button-toggle-checked {
+	background-color: rgba($color: #6da1b6, $alpha: 0.1);
 }

@@ -1,19 +1,41 @@
 <div class="element-bg-img"><img src="/assets/images/1.jpg" alt="" /></div>
 <div>
+	<div class="ele-top-strip">
+		<mat-form-field class="form-field">
+			<input class="form-input" matInput type="text" placeholder="Search.." [(ngModel)]="value" />
+			<button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+				<mat-icon>close</mat-icon>
+			</button>
+		</mat-form-field>
+	</div>
 	<div class="ele-strip">
-		<ul>
-			<li><a href="/">Hotel</a></li>
-			<li><a href="/">Fishing</a></li>
-			<li><a href="/">Tours</a></li>
-			<li class="anc-bor"><a href="/">Weather</a></li>
-		</ul>
+		<mat-button-toggle-group #starFilter="matButtonToggleGroup">
+			<mat-button-toggle value="" aria-label="All">
+				All
+			</mat-button-toggle>
+			<mat-button-toggle value="3" aria-label="3-star">
+				***
+			</mat-button-toggle>
+			<mat-button-toggle value="4" aria-label="4-star">
+				****
+			</mat-button-toggle>
+			<mat-button-toggle value="5" aria-label="5-star">
+				*****
+			</mat-button-toggle>
+		</mat-button-toggle-group>
 	</div>
 	<div class="village">
 		<h3>Righteous indignation & like</h3>
 		<span class="line"> </span>
 		<div class="activity_box">
 			<div class="scrollbar" id="style-2">
-				<app-hotel-list-item *ngFor="let hotel of hotels" [hotel]="hotel" (selectedHotel)="pushEventUp($event)">
+				<app-hotel-list-item
+					*ngFor="let hotel of hotels | filterHotels: value | filterStars: starFilter.value"
+					[hotel]="hotel"
+					(selectedHotel)="pushEventUp($event)"
+					(favHotel)="favEventHotelListHandler($event)"
+					[mainList]="true"
+				>
 				</app-hotel-list-item>
 			</div>
 		</div>

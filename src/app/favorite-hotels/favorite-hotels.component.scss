@@ -1,0 +1,17 @@
+.favorite_hotels {
+	background-color: #fdf7ff;
+	border-radius: 5px;
+	padding: 1em;
+	overflow-y: auto;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.favorite_header {
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 1.5em;
+}

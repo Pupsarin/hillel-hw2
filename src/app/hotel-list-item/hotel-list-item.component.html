@@ -10,6 +10,7 @@
 			<li *ngFor="let photo of hotel.photos">
 				<img src="{{ photo }}" alt="" />
 			</li>
+			<button (click)="handleFavs(hotel)" mat-button color="accent">{{ mainList ? 'Add to favs' : 'Remove' }}</button>
 		</ul>
 	</div>
 	<div class="clear"></div>

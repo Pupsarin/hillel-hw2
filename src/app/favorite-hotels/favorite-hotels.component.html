@@ -1,0 +1,14 @@
+<ng-template [ngIf]="hotels.size" [ngIfElse]="elseBlock">
+	<div class="favorite_hotels">
+		<h5 class="favorite_header">Favorite hotels</h5>
+		<app-hotel-list-item
+			[mainList]="false"
+			*ngFor="let hotel of hotels"
+			[hotel]="hotel"
+			(favHotel)="pushFav($event)"
+		></app-hotel-list-item>
+	</div>
+</ng-template>
+<ng-template #elseBlock>
+	<div></div>
+</ng-template>

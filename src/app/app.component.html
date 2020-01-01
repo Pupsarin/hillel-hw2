@@ -2,11 +2,16 @@
 <h1>Hot Weather Widget</h1>
 <div class="element">
 	<div class="element-left">
-		<app-hotel-list [hotels]="hotels" (listEvent)="selectActiveHotel($event)"></app-hotel-list>
+		<app-hotel-list
+			[hotels]="hotels"
+			(listEvent)="selectActiveHotel($event)"
+			(favEventHotelList)="handleAddFav($event)"
+		></app-hotel-list>
 	</div>
 	<div class="element-right">
 		<app-weather [weather]="activeHotel.weather"></app-weather>
 		<app-profile [profile]="activeHotel.profile"></app-profile>
+		<app-favorite-hotels [hotels]="favHotels" (favEvent)="handleDelFav($event)"></app-favorite-hotels>
 	</div>
 	<div class="clear"></div>
 </div>
