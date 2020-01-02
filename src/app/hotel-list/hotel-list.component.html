@@ -30,11 +30,12 @@
 		<div class="activity_box">
 			<div class="scrollbar" id="style-2">
 				<app-hotel-list-item
-					*ngFor="let hotel of hotels | filterHotels: value | filterStars: starFilter.value"
+					*ngFor="let hotel of hotels | filterHotels: value | filterStars: starFilter.value; index as i; odd as odd"
 					[hotel]="hotel"
 					(selectedHotel)="pushEventUp($event)"
 					(favHotel)="favEventHotelListHandler($event)"
 					[mainList]="true"
+					[odd]="odd"
 				>
 				</app-hotel-list-item>
 			</div>

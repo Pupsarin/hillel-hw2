@@ -11,6 +11,7 @@ export class HotelListItemComponent implements OnInit {
 
 	@Input() public hotel: IHotel;
 	@Input() public mainList: boolean;
+	@Input() public odd: boolean;
 
 	@Output() selectedHotel = new EventEmitter<number>();
 	@Output() favHotel = new EventEmitter<IHotel>();

@@ -1,4 +1,4 @@
-<div class="activity-row" (click)="selectHotel(hotel.id)">
+<div class="activity-row" (click)="selectHotel(hotel.id)" [ngClass]="{ odd: odd }">
 	<div class="activity-desc">
 		<h5>{{ hotel.title }}</h5>
 		<p>{{ hotel.address }}</p>

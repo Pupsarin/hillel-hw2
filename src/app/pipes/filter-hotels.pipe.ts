@@ -7,7 +7,9 @@ import { IHotel } from '../shared/interfaces/IHotel';
 export class FilterHotelsPipe implements PipeTransform {
 	transform(hotels: IHotel[], searchText: string): IHotel[] {
 		if (searchText) {
-			return hotels.filter((hotel: IHotel): boolean => `${hotel.title}${hotel.description}`.toLowerCase().includes(searchText));
+			return hotels.filter((hotel: IHotel): boolean =>
+				`${hotel.title}${hotel.description}`.toLowerCase().includes(searchText.toLowerCase())
+			);
 		}
 		return hotels;
 	}
