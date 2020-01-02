@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { IHotel } from './shared/interfaces/IHotel';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
 	selector: 'app-hotels',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 })
 export class AppHotelsComponent {
+	constructor(private _snackBar: MatSnackBar) {}
 	public title = 'hillel-hw2';
 	public activeHotelId = 0;
 	public hotels: IHotel[] = [
@@ -85,10 +87,22 @@ export class AppHotelsComponent {
 	}
 
 	public handleAddFav($event: IHotel): void {
-		this.favHotels.add($event);
+		if (!this.favHotels.has($event)) {
+			this.favHotels.add($event);
+			this._snackBar.open(`"${$event.title}" added to favorites!`, 'Close', {
+				duration: 3000,
+			});
+		} else {
+			this._snackBar.open(`"${$event.title}" already in favorites.`, 'Close', {
+				duration: 3000,
+			});
+		}
 	}
 
 	public handleDelFav($event: IHotel): void {
 		this.favHotels.delete($event);
+		this._snackBar.open(`"${$event.title}" removed from favorites.`, 'Close', {
+			duration: 3000,
+		});
 	}
 }
