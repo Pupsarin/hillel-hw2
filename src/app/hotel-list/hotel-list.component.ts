@@ -10,8 +10,8 @@ import { IHotel } from '../shared/interfaces/IHotel';
 export class HotelListComponent implements OnInit {
 	constructor() {}
 
-	@Input()
-	public hotels: IHotel[];
+	@Input() public hotels: IHotel[];
+	@Input() public value: string;
 
 	@Output() public listEvent = new EventEmitter();
 	@Output() public favEventHotelList = new EventEmitter<IHotel>();

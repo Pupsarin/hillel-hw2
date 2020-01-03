@@ -10,7 +10,7 @@ export class AppHotelsComponent implements OnInit {
 	constructor(private _snackBar: MatSnackBar) {}
 	public title = 'hillel-hw2';
 	public activeHotelId = -1;
-	public favHotels = new Set();
+	public favHotels: Set<IHotel> = new Set();
 	public hotels: IHotel[] = [
 		{
 			id: -1,

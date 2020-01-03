@@ -10,7 +10,7 @@ export class FavoriteHotelsComponent implements OnInit {
 	constructor() {}
 
 	@Input()
-	public hotels: IHotel[];
+	public hotels: Set<IHotel>;
 
 	@Output()
 	public favEvent = new EventEmitter<IHotel>();
