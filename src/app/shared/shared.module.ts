@@ -6,10 +6,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SkeletonDirective } from './directives/skeleton.directive';
 
 @NgModule({
-	declarations: [],
+	declarations: [SkeletonDirective],
 	imports: [CommonModule],
-	exports: [MatToolbarModule, MatSnackBarModule, MatButtonModule, MatButtonToggleModule, MatInputModule, MatIconModule],
+	exports: [
+		MatToolbarModule,
+		SkeletonDirective,
+		MatSnackBarModule,
+		MatButtonModule,
+		MatButtonToggleModule,
+		MatInputModule,
+		MatIconModule,
+	],
 })
 export class SharedModule {}

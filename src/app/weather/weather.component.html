@@ -1,6 +1,13 @@
 <div class="temperatur">
-    <h5>Wind: {{weather.wind}}m/s</h5>
-    <span class="w-line"> </span>
-    <span class="img {{weather.icon}}"> </span>
-    <h2>{{weather.temperature}}<sup>°</sup></h2>
+	<h5>Wind: {{ weather.wind }}m/s</h5>
+	<span class="w-line"> </span>
+	<ng-template [ngIf]="weather.icon" [ngIfElse]="elseBlock">
+		<span class="img {{ weather.icon }}"> </span>
+		<h2>{{ weather.temperature }}<sup>°</sup></h2>
+	</ng-template>
 </div>
+<ng-template #elseBlock>
+	<div class="block">
+		<div class="skeleton"></div>
+	</div>
+</ng-template>

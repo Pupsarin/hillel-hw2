@@ -1,19 +1,35 @@
 <div class="teddy-bear">
-    <div class="teddy-text">
-        <h4>Nam libero voluptatem</h4>
-        <span class="w-line"> </span>
-        <img src="{{profile.photo}}" alt="">
-    </div>
-    <div class="teddy-follow">
-        <ul>
-            <li class="folw-h">
-                <h3>{{profile.followers}}</h3>
-                <p>Followers</p>
-            </li>
-            <li>
-                <h3>{{profile.following}}</h3>
-                <p>Following</p>
-            </li>
-        </ul>
-    </div>
+	<div class="teddy-text">
+		<h4>Nam libero voluptatem</h4>
+		<span class="w-line"> </span>
+		<ng-template [ngIf]="profile.photo" [ngIfElse]="elseBlock">
+			<img src="{{ profile.photo }}" alt="" />
+		</ng-template>
+	</div>
+	<div class="teddy-follow">
+		<ul>
+			<li class="folw-h">
+				<ng-template [ngIf]="profile.photo" [ngIfElse]="followersBlock">
+					<h3>{{ profile.followers }}</h3>
+				</ng-template>
+				<p>Followers</p>
+			</li>
+			<li>
+				<ng-template [ngIf]="profile.photo" [ngIfElse]="followersBlock">
+					<h3>{{ profile.following }}</h3>
+				</ng-template>
+				<p>Following</p>
+			</li>
+		</ul>
+	</div>
 </div>
+<ng-template #elseBlock>
+	<div class="image-block">
+		<div class="skeleton"></div>
+	</div>
+</ng-template>
+<ng-template #followersBlock>
+	<div class="followers-block">
+		<div class="skeleton"></div>
+	</div>
+</ng-template>

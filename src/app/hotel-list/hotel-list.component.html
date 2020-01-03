@@ -29,16 +29,21 @@
 		<span class="line"> </span>
 		<div class="activity_box">
 			<div class="scrollbar" id="style-2">
-				<app-hotel-list-item
-					*ngFor="let hotel of hotels | filterHotels: value | filterStars: starFilter.value; index as i; odd as odd"
-					[hotel]="hotel"
-					(selectedHotel)="pushEventUp($event)"
-					(favHotel)="favEventHotelListHandler($event)"
-					[mainList]="true"
-					[odd]="odd"
-				>
-				</app-hotel-list-item>
+				<ng-template [ngIf]="hotels[0].id !== -1" [ngIfElse]="elseBlock">
+					<app-hotel-list-item
+						*ngFor="let hotel of hotels | filterHotels: value | filterStars: starFilter.value; index as i; odd as odd"
+						[hotel]="hotel"
+						(selectedHotel)="pushEventUp($event)"
+						(favHotel)="favEventHotelListHandler($event)"
+						[mainList]="true"
+						[odd]="odd"
+					>
+					</app-hotel-list-item>
+				</ng-template>
 			</div>
 		</div>
 	</div>
 </div>
+<ng-template #elseBlock>
+	<div class="skeleton"></div>
+</ng-template>
